@@ -1,0 +1,14 @@
+{
+  "volunteers": [
+    {
+      "id": 1,
+      "name": "Austun Chan",
+      "police-cleared": false
+    },
+    {
+      "id": 2,
+      "name": "Udaian Saren",
+      "police-cleared": true
+    }
+  ]
+}
