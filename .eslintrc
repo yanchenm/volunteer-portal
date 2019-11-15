@@ -16,5 +16,8 @@
     "react/jsx-filename-extension": ["off"],
     "react/prop-types": ["warn"],
     "no-return-assign": ["off"]
+  },
+  "required": {
+    "some": ["nesting", "id"]
   }
 }
