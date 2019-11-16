@@ -11,23 +11,17 @@ import 'antd/dist/antd.css';
 import FormElement from './FormElement';
 
 const ApplicationForm = () => {
+  const initialValues = {};
+  fields.forEach(field => {
+    initialValues[field.fieldName] = '';
+  });
+
   return (
     <div>
       <div style={{ width: 400, margin: '100px auto' }}>
         <h1>Application Form</h1>
         <Formik
-          initialValues={{
-            firstName: '',
-            lastName: '',
-            gender: '',
-            address: '',
-            city: '',
-            province: '',
-            postalCode: '',
-            daytimePhone: '',
-            eveningPhone: '',
-            email: '',
-          }}
+          initialValues={initialValues}
           onSubmit={values => {
             console.log(values);
           }}
