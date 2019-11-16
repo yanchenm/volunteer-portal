@@ -8,9 +8,9 @@ import * as Yup from 'yup';
 import fields from './applicationForm.json';
 
 import 'antd/dist/antd.css';
-import TextElement from './TextElement';
-import RadioElement from './RadioElement';
-import TextAreaElement from './TextAreaElement';
+import TextElement from '../../forms/TextElement';
+import RadioElement from '../../forms/RadioElement';
+import TextAreaElement from '../../forms/TextAreaElement';
 
 const ApplicationForm = () => {
   const initialValues = {};
