@@ -1,15 +1,16 @@
 [
   {
-    "fieldName": "firstName",
-    "label": "First Name:",
+    "fieldName": "qualifications",
+    "label": "What skills, training, and/or qualifications do you possess that would benefit your volunteer experience?",
     "required": true,
-    "type": "text"
+    "type": "textArea"
   },
   {
-    "fieldName": "lastName",
-    "label": "Last Name:",
+    "fieldName": "firstAid",
+    "label": "Do you posses a vaild First Aid Certificate and/or are you CPR certified?",
     "required": true,
-    "type": "text"
+    "type": "radio",
+    "options": ["Yes", "No"]
   },
   {
     "fieldName": "gender",
@@ -58,12 +59,5 @@
     "label": "Email:",
     "required": true,
     "type": "text"
-  },
-  {
-    "fieldName": "age",
-    "label": "Age:",
-    "required": true,
-    "type": "radio",
-    "options": ["15-20", "21-25", "26-30", "31+"]
   }
 ]
