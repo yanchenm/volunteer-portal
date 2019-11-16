@@ -1,42 +1,52 @@
 [
   {
     "fieldName": "firstName",
-    "label": "First Name:"
+    "label": "First Name:",
+    "required": true
   },
   {
     "fieldName": "lastName",
-    "label": "Last Name:"
+    "label": "Last Name:",
+    "required": true
   },
   {
     "fieldName": "gender",
-    "label": "I identify my gender as:"
+    "label": "I identify my gender as:",
+    "required": true
   },
   {
     "fieldName": "address",
-    "label": "Address:"
+    "label": "Address:",
+    "required": true
   },
   {
     "fieldName": "city",
-    "label": "City:"
+    "label": "City:",
+    "required": true
   },
   {
     "fieldName": "province",
-    "label": "Province:"
+    "label": "Province:",
+    "required": true
   },
   {
     "fieldName": "postalCode",
-    "label": "Postal Code:"
+    "label": "Postal Code:",
+    "required": true
   },
   {
     "fieldName": "daytimePhone",
-    "label": "Daytime Phone Number:"
+    "label": "Daytime Phone Number:",
+    "required": true
   },
   {
     "fieldName": "eveningPhone",
-    "label": "Evening Phone Number:"
+    "label": "Evening Phone Number:",
+    "required": true
   },
   {
     "fieldName": "email",
-    "label": "Email:"
+    "label": "Email:",
+    "required": true
   }
 ]
