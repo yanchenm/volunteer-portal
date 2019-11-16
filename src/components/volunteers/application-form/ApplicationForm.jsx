@@ -12,8 +12,13 @@ import FormElement from './FormElement';
 
 const ApplicationForm = () => {
   const initialValues = {};
+  const validationSchema = {};
+
   fields.forEach(field => {
     initialValues[field.fieldName] = '';
+    if (field.required) {
+      validationSchema[field.fieldName] = Yup.string().required('This field is required');
+    }
   });
 
   return (
@@ -26,18 +31,12 @@ const ApplicationForm = () => {
             console.log(values);
           }}
           validationSchema={Yup.object().shape({
-            firstName: Yup.string().required('First name is required.'),
-            lastName: Yup.string().required('Last name is required.'),
-            gender: Yup.string().required('Gender is required.'),
-            address: Yup.string().required('Address is required.'),
-            city: Yup.string().required('City is required.'),
-            province: Yup.string().required('Province is required.'),
-            postalCode: Yup.string().required('Postal Code is required.'),
-            daytimePhone: Yup.string().required('Daytime Phone Number is required.'),
-            eveningPhone: Yup.string().required('Evening Phone Number is required.'),
-            email: Yup.string()
-              .email('Email is invalid.')
-              .required('Email is required'),
+            ...validationSchema,
+            ...{
+              email: Yup.string()
+                .email('Email is invalid.')
+                .required('This field is required'),
+            },
           })}
         >
           {({ values, handleChange, handleBlur, handleSubmit, errors, touched }) => (
