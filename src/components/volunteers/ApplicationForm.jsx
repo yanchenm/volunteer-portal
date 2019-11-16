@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Button, Checkbox, Form } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 
 const Wrapper = styled.div`
   margin: 10px 20%;
@@ -26,6 +27,7 @@ const ApplicationForm = () => (
       </Form.Field>
       <Button type="submit">Submit</Button>
     </Form>
+    <Link to="/">Back Home</Link>
   </Wrapper>
 );
 
