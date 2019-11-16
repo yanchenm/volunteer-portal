@@ -5,7 +5,7 @@ import React from 'react';
 import { Formik } from 'formik';
 import { Button } from 'antd';
 import * as Yup from 'yup';
-import fields from './fields.json';
+import fields from './contactInfo.json';
 
 import 'antd/dist/antd.css';
 import FormElement from './FormElement';
