@@ -9,6 +9,7 @@ import fields from './applicationForm.json';
 
 import 'antd/dist/antd.css';
 import TextElement from '../../forms/TextElement';
+import PasswordElement from '../../forms/PasswordElement';
 import RadioElement from '../../forms/RadioElement';
 import TextAreaElement from '../../forms/TextAreaElement';
 
@@ -47,6 +48,19 @@ const ApplicationForm = () => {
                 if (item.type === 'text') {
                   return (
                     <TextElement
+                      errors={errors}
+                      fieldName={item.fieldName}
+                      handleBlur={handleBlur}
+                      handleChange={handleChange}
+                      label={item.label}
+                      touched={touched}
+                      values={values}
+                    />
+                  );
+                }
+                if (item.type === 'password') {
+                  return (
+                    <PasswordElement
                       errors={errors}
                       fieldName={item.fieldName}
                       handleBlur={handleBlur}

@@ -13,6 +13,12 @@
     "options": ["Yes", "No"]
   },
   {
+    "fieldName": "testPassowrd",
+    "label": "This is a password",
+    "required": true,
+    "type": "password"
+  },
+  {
     "fieldName": "gender",
     "label": "I identify my gender as:",
     "required": true,
