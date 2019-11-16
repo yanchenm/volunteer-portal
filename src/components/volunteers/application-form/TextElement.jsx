@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 
 import 'antd/dist/antd.css';
 
-export const FormElement = props => {
+export const TextElement = props => {
   const { errors, fieldName, handleBlur, handleChange, label, touched, values } = props;
   return (
     <div className="form-group">
@@ -25,7 +25,7 @@ export const FormElement = props => {
   );
 };
 
-FormElement.propTypes = {
+TextElement.propTypes = {
   errors: PropTypes.func.isRequired,
   fieldName: PropTypes.string.isRequired,
   handleBlur: PropTypes.func.isRequired,
@@ -35,4 +35,4 @@ FormElement.propTypes = {
   values: PropTypes.func.isRequired,
 };
 
-export default FormElement;
+export default TextElement;
