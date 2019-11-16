@@ -4,7 +4,7 @@ import { Route, BrowserRouter as Router } from 'react-router-dom';
 
 import App from './App';
 import Banner from './components/Banner';
-import ApplicationForm from './components/volunteers/ApplicationForm';
+import ApplicationForm from './components/volunteers/application-form/ApplicationForm';
 import LoginPage from './components/LoginPage';
 import ProfilePage from './components/volunteers/ProfilePage';
 import ApplicationProgress from './components/volunteers/ApplicationProgress';

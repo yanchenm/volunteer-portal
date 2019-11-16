@@ -1,0 +1,26 @@
+[
+  {
+    "fieldName": "name",
+    "label": "Name:",
+    "required": true,
+    "type": "text"
+  },
+  {
+    "fieldName": "nameDate",
+    "label": "Date:",
+    "required": true,
+    "type": "text"
+  },
+  {
+    "fieldName": "parentName",
+    "label": "Name of Parent/Guardian (if under 18 years):",
+    "required": false,
+    "type": "text"
+  },
+  {
+    "fieldName": "parentNameDate",
+    "label": "Date:",
+    "required": false,
+    "type": "text"
+  }
+]

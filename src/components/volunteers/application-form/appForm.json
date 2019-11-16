@@ -1,0 +1,151 @@
+[
+  {
+    "header": "Emergency Contact",
+    "fields": [
+      {
+        "fieldName": "emergencyContactName",
+        "label": "In case of emergency, please contact:",
+        "required": true,
+        "type": "text"
+      },
+      {
+        "fieldName": "emergencyContactRelationship",
+        "label": "Relationship to Volunteer:",
+        "required": true,
+        "type": "text"
+      },
+      {
+        "fieldName": "emergencyContactPhoneNumber",
+        "label": "Phone Number:",
+        "required": true,
+        "type": "text"
+      }
+    ]
+  },
+  {
+    "header": "How Did You Hear About Us?",
+    "fields": [
+      {
+        "fieldName": "howHeardAboutUs",
+        "label": "How did you hear about Autism Ontario-Central West Region? Please be specific if possible (i.e. “google search”, or “Volunteer Halton”)",
+        "required": true,
+        "type": "text"
+      }
+    ]
+  },
+  {
+    "header": "Areas of Interest",
+    "fields": [
+      {
+        "fieldName": "areasOfInterest",
+        "label": "Select all that interest you:",
+        "required": true,
+        "type": "checkbox",
+        "options": [
+          "Adult Supports",
+          "Regional Events",
+          "Outreach and Development",
+          "Volunteer Recruitment and Support",
+          "Parent Mentorship",
+          "Advocacy",
+          "Community Building",
+          "Fundraising",
+          "Educational Advocacy"
+        ]
+      }
+    ]
+  },
+  {
+    "header": "About Me",
+    "fields": [
+      {
+        "fieldName": "qualifications",
+        "label": "What skills, training, and/or qualifications do you possess that would benefit your volunteer experience?",
+        "required": true,
+        "type": "textArea"
+      },
+      {
+        "fieldName": "firstAid",
+        "label": "Do you posses a vaild First Aid Certificate and/or are you CPR certified?",
+        "required": true,
+        "type": "radio",
+        "options": ["Yes", "No"]
+      },
+      {
+        "fieldName": "otherCertificates",
+        "label": " What other certificates/awards do you posess that would benefit your volunteer experience?",
+        "required": true,
+        "type": "textArea"
+      },
+      {
+        "fieldName": "willingToSubmitVulnerableScreening",
+        "label": "Are you willing to submit a vulnerable sector screening check?",
+        "required": true,
+        "type": "radio",
+        "options": ["Yes", "No"]
+      },
+      {
+        "fieldName": "completedVulnerableSectorCheck",
+        "label": "I have completed a vulnerable sector check dated within the last 6 months",
+        "required": false,
+        "type": "radio",
+        "options": ["Yes"]
+      }
+    ]
+  },
+  {
+    "header": "Availability",
+    "fields": [
+      {
+        "fieldName": "availability",
+        "label": "Please check all that apply:",
+        "required": true,
+        "type": "textArea"
+      },
+      {
+        "fieldName": "periodOfTime",
+        "label": "What period of time are you able to commit to volunteering for?",
+        "required": true,
+        "type": "radio",
+        "options": ["3 months", "6 months", "1 year +"]
+      },
+      {
+        "fieldName": "cities",
+        "label": "Programs and Events take place all across the Central West region. Please select the city and/or cities you are able to volunteer in?",
+        "required": true,
+        "type": "radio",
+        "options": ["Halton", "Peel", "Hamilton", "Wellington", "Waterloo"]
+      },
+      {
+        "fieldName": "vehicle",
+        "label": "Some travel within the Central West region may be required for some volunteer opportunities. Do you have access to a vehicle?",
+        "required": true,
+        "type": "radio",
+        "options": ["Yes", "No"]
+      }
+    ]
+  },
+  {
+    "header": "Stay Connected to the Volunteer Network at Autism Ontario-Central West",
+    "fields": [
+      {
+        "fieldName": "stayConnected",
+        "label": "Would you like to be added to our email distribution list to receive news and updates from Autism Ontario and the Central West region?",
+        "required": true,
+        "type": "radio",
+        "options": ["Yes", "No"]
+      }
+    ]
+  },
+  {
+    "header": "References",
+    "fields": [
+      {
+        "fieldName": "references",
+        "label": "Please provide two references, preferably one professional (job and/or volunteer) and 1 personal reference that will speak to your character, skills, and interests. You need to have known the reference for at least 6 months.",
+        "required": true,
+        "type": "textArea"
+      }
+    ]
+  }
+]
