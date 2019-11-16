@@ -1,0 +1,42 @@
+[
+  {
+    "fieldName": "firstName",
+    "label": "First Name:"
+  },
+  {
+    "fieldName": "lastName",
+    "label": "Last Name:"
+  },
+  {
+    "fieldName": "gender",
+    "label": "I identify my gender as:"
+  },
+  {
+    "fieldName": "address",
+    "label": "Address:"
+  },
+  {
+    "fieldName": "city",
+    "label": "City:"
+  },
+  {
+    "fieldName": "province",
+    "label": "Province:"
+  },
+  {
+    "fieldName": "postalCode",
+    "label": "Postal Code:"
+  },
+  {
+    "fieldName": "daytimePhone",
+    "label": "Daytime Phone Number:"
+  },
+  {
+    "fieldName": "eveningPhone",
+    "label": "Evening Phone Number:"
+  },
+  {
+    "fieldName": "email",
+    "label": "Email:"
+  }
+]
