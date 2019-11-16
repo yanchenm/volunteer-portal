@@ -15,6 +15,7 @@ export const TextAreaElement = props => {
     <div className="form-group">
       <label htmlFor={fieldName}>{label}</label>
       <TextArea
+        style={{ marginBottom: '20px' }}
         onChange={handleChange}
         name={fieldName}
         value={values[fieldName]}

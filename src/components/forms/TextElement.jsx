@@ -13,6 +13,7 @@ export const TextElement = props => {
     <div className="form-group">
       <label htmlFor={fieldName}>{label}</label>
       <Input
+        style={{ marginBottom: '20px' }}
         onChange={handleChange}
         name={fieldName}
         value={values[fieldName]}

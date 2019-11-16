@@ -16,7 +16,11 @@ export const RadioElement = props => {
       <br />
       <Radio.Group onChange={handleChange} value={values[fieldName]} name={fieldName}>
         {options.map(item => {
-          return <Radio.Button value={item}>{item}</Radio.Button>;
+          return (
+            <Radio.Button style={{ marginBottom: '20px' }} value={item}>
+              {item}
+            </Radio.Button>
+          );
         })}
       </Radio.Group>
       {errors[fieldName] && touched[fieldName] && (
