@@ -5,10 +5,12 @@ import React from 'react';
 import { Formik } from 'formik';
 import { Button } from 'antd';
 import * as Yup from 'yup';
-import fields from './contactInfo.json';
+import fields from './applicationForm.json';
 
 import 'antd/dist/antd.css';
-import FormElement from './FormElement';
+import TextElement from './TextElement';
+import RadioElement from './RadioElement';
+import TextAreaElement from './TextAreaElement';
 
 const ApplicationForm = () => {
   const initialValues = {};
@@ -23,7 +25,7 @@ const ApplicationForm = () => {
 
   return (
     <div>
-      <div style={{ width: 400, margin: '100px auto' }}>
+      <div style={{ width: 800, margin: '100px auto' }}>
         <h1>Application Form</h1>
         <Formik
           initialValues={initialValues}
@@ -42,17 +44,48 @@ const ApplicationForm = () => {
           {({ values, handleChange, handleBlur, handleSubmit, errors, touched }) => (
             <form onSubmit={handleSubmit}>
               {fields.map(item => {
-                return (
-                  <FormElement
-                    errors={errors}
-                    fieldName={item.fieldName}
-                    handleBlur={handleBlur}
-                    handleChange={handleChange}
-                    label={item.label}
-                    touched={touched}
-                    values={values}
-                  />
-                );
+                if (item.type === 'text') {
+                  return (
+                    <TextElement
+                      errors={errors}
+                      fieldName={item.fieldName}
+                      handleBlur={handleBlur}
+                      handleChange={handleChange}
+                      label={item.label}
+                      touched={touched}
+                      values={values}
+                    />
+                  );
+                }
+                if (item.type === 'radio') {
+                  return (
+                    <RadioElement
+                      errors={errors}
+                      fieldName={item.fieldName}
+                      handleBlur={handleBlur}
+                      handleChange={handleChange}
+                      label={item.label}
+                      options={item.options}
+                      touched={touched}
+                      values={values}
+                    />
+                  );
+                }
+                if (item.type === 'textArea') {
+                  return (
+                    <TextAreaElement
+                      errors={errors}
+                      fieldName={item.fieldName}
+                      handleBlur={handleBlur}
+                      handleChange={handleChange}
+                      label={item.label}
+                      options={item.options}
+                      touched={touched}
+                      values={values}
+                    />
+                  );
+                }
+                return <div />;
               })}
               <Button type="primary" onClick={handleSubmit}>
                 Apply
