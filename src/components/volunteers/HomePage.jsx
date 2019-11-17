@@ -1,5 +1,6 @@
 import React from 'react';
-import { Result, Button } from 'antd';
+import { Result } from 'antd';
+import { Link } from 'react-router-dom';
 
 import { UserConsumer, userStates } from '../../user.context';
 import ProfilePage from './ProfilePage';
@@ -7,7 +8,7 @@ import ApplicationProgress from './ApplicationProgress';
 
 import 'antd/dist/antd.css';
 
-const HomePage = ({ history, match }) => {
+const HomePage = ({ match }) => {
   return (
     <UserConsumer>
       {context => {
@@ -20,16 +21,7 @@ const HomePage = ({ history, match }) => {
               status="403"
               title="403"
               subTitle="Sorry, you are not authorized to access this page."
-              extra={
-                <Button
-                  type="primary"
-                  onClick={() => {
-                    history.push(context.goHome());
-                  }}
-                >
-                  Back Home
-                </Button>
-              }
+              extra={<Link to={context.goHome()}>Go Home.</Link>}
             />
           );
         }
@@ -50,16 +42,7 @@ const HomePage = ({ history, match }) => {
             status="403"
             title="403"
             subTitle="Sorry, you are not authorized to access this page."
-            extra={
-              <Button
-                type="primary"
-                onClick={() => {
-                  history.push(context.goHome());
-                }}
-              >
-                Back Home
-              </Button>
-            }
+            extra={<Link to={context.goHome()}>Go Home.</Link>}
           />
         );
       }}
