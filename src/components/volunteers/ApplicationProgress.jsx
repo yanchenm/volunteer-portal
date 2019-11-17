@@ -1,5 +1,6 @@
 import React from 'react';
-import { Card, Icon, Row, Col, Result } from 'antd';
+import { Card, Icon, Row, Col, Result, Divider, Button } from 'antd';
+import { withRouter } from 'react-router-dom';
 
 import Banner from '../common/Banner';
 import PageFooter from '../common/PageFooter';
@@ -8,7 +9,7 @@ import { UserConsumer } from '../../user.context';
 
 import 'antd/dist/antd.css';
 
-const ApplicationProgress = () => {
+const ApplicationProgress = props => {
   return (
     <UserConsumer>
       {context => {
@@ -32,6 +33,60 @@ const ApplicationProgress = () => {
           <Result status="success" title={approveText} />
         ) : (
           <Result title={approveText} />
+        );
+
+        const policeElement = user.policeCheck ? (
+          <Result
+            status="success"
+            title={"We've received your document upload."}
+            extra={[
+              <Button type="primary" disabled>
+                Upload
+              </Button>,
+            ]}
+          />
+        ) : (
+          <Result
+            title="Please upload your document to continue the process."
+            extra={[
+              <Button
+                type="primary"
+                key="policeUpload"
+                onClick={() => {
+                  props.history.push('/upload/police');
+                }}
+              >
+                Upload
+              </Button>,
+            ]}
+          />
+        );
+
+        const vulnerableElement = user.vulnerableCheck ? (
+          <Result
+            status="success"
+            title={"We've received your document upload."}
+            extra={[
+              <Button type="primary" disabled>
+                Upload
+              </Button>,
+            ]}
+          />
+        ) : (
+          <Result
+            title="Please upload your document to continue the process."
+            extra={[
+              <Button
+                type="primary"
+                key="vulnerableUpload"
+                onClick={() => {
+                  props.history.push('/upload/vulnerable');
+                }}
+              >
+                Upload
+              </Button>,
+            ]}
+          />
         );
 
         return (
@@ -70,6 +125,24 @@ const ApplicationProgress = () => {
                   </Col>
                 </Row>
               </div>
+              <Divider />
+              <h1>Upload your Documents</h1>
+              <div style={{ margin: '20px auto' }}>
+                <Row>
+                  <Col span={6}>
+                    <Card title="Police Background Check" style={{ width: 500 }}>
+                      {policeElement}
+                    </Card>
+                  </Col>
+                  <Col span={4} />
+                  <Col span={6}>
+                    <Card title="Vulnerable Sector Screening" style={{ width: 500 }}>
+                      {vulnerableElement}
+                    </Card>
+                  </Col>
+                  <Col span={4} />
+                </Row>
+              </div>
             </div>
             <PageFooter />
           </div>
@@ -79,4 +152,4 @@ const ApplicationProgress = () => {
   );
 };
 
-export default ApplicationProgress;
+export default withRouter(ApplicationProgress);
