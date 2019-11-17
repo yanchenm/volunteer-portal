@@ -1,6 +1,5 @@
 /* eslint-disable no-useless-concat */
 const baseUrl =
-  'https://cors-anywhere.herokuapp.com/' +
   'http://99.79.69.43/web/libraries/civicrm/extern/rest.php' +
   '?key=addf0fd097b87e5364a74c07b4ef4e3e&api_key=drupal';
 

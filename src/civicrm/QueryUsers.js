@@ -1,7 +1,6 @@
 /* eslint-disable no-useless-concat */
 /* eslint-disable max-len */
 const baseUrl =
-  'https://cors-anywhere.herokuapp.com/' +
   'http://99.79.69.43/web/libraries/civicrm/extern/rest.php' +
   '?key=addf0fd097b87e5364a74c07b4ef4e3e&api_key=drupal';
 
@@ -20,7 +19,7 @@ const listVolunteers = (interviewed, approved) => {
   const requestType = 'entity=Contact&action=get';
   const fields = '';
   const extraFields =
-    'custom_11,custom_15,custom_16,custom_17,custom_18,custom_19,custom_20,custom_21,custom_22,custom_23,custom_24,custom_25,custom_26,custom_27,custom_28,custom_29,custom_30,custom_31,custom_32';
+    'custom_11,custom_15,custom_16,custom_17,custom_18,custom_19,custom_20,custom_21,custom_22,custom_23,custom_24,custom_25,custom_26,custom_27,custom_28,custom_29,custom_30,custom_31,custom_32,custom_38';
   const body =
     `json={"return":"${fields}"` +
     `,"custom_37":"true"` +
