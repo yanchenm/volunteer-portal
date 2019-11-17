@@ -31,13 +31,13 @@ export const RadioElement = props => {
 };
 
 RadioElement.propTypes = {
-  errors: PropTypes.func.isRequired,
+  errors: PropTypes.object.isRequired,
   fieldName: PropTypes.string.isRequired,
   handleChange: PropTypes.func.isRequired,
   label: PropTypes.string.isRequired,
   options: PropTypes.array.isRequired,
-  touched: PropTypes.func.isRequired,
-  values: PropTypes.func.isRequired,
+  touched: PropTypes.object.isRequired,
+  values: PropTypes.object.isRequired,
 };
 
 export default RadioElement;
