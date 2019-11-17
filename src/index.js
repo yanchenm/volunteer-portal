@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Route, BrowserRouter as Router } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Redirect } from 'react-router-dom';
+import { UserConsumer, UserProvider } from './user.context';
 
 import App from './App';
 import Banner from './components/common/Banner';
@@ -16,22 +17,33 @@ import EventDetails from './components/events/EventDetails';
 import RegistrationPage from './components/volunteers/registration/RegistrationPage';
 
 const routing = (
-  <Router>
-    <div>
-      <Route exact path="/" component={App} />
-      <Route path="/banner" component={Banner} />
-      <Route path="/login" component={LoginPage} />
-      <Route path="/register" component={RegistrationPage} />
-      <Route path="/apply" component={ApplicationForm} />
-      <Route path="/profile" component={ProfilePage} />
-      <Route path="/progress" component={ApplicationProgress} />
-      <Route path="/upload" component={DocumentUpload} />
-      <Route path="/track" component={TrackHistory} />
-      <Route path="/staff" component={StaffPage} />
-      <Route exact path="/events" component={EventsPage} />
-      <Route path="/events/:id" component={EventDetails} />
-    </div>
-  </Router>
+  <UserProvider>
+    <UserConsumer>
+      {context => {
+        return (
+          <Router>
+            <div>
+              <Route exact path="/" component={App} />
+              <Route path="/home">
+                <Redirect to={context.goHome()} />
+              </Route>
+              <Route path="/banner" component={Banner} />
+              <Route path="/login" component={LoginPage} />
+              <Route path="/register" component={RegistrationPage} />
+              <Route path="/apply" component={ApplicationForm} />
+              <Route path="/profile/:id" component={ProfilePage} />
+              <Route path="/progress" component={ApplicationProgress} />
+              <Route path="/upload" component={DocumentUpload} />
+              <Route path="/track" component={TrackHistory} />
+              <Route path="/staff" component={StaffPage} />
+              <Route exact path="/events" component={EventsPage} />
+              <Route path="/events/:id" component={EventDetails} />
+            </div>
+          </Router>
+        );
+      }}
+    </UserConsumer>
+  </UserProvider>
 );
 
 ReactDOM.render(routing, document.getElementById('root'));
