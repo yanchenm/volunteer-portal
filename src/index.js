@@ -33,7 +33,7 @@ const routing = (
               <Route path="/apply" component={ApplicationForm} />
               <Route path="/profile/:id" component={HomePage} />
               <Route path="/progress" component={ApplicationProgress} />
-              <Route path="/upload" component={DocumentUpload} />
+              <Route path="/upload/:type" component={DocumentUpload} />
               <Route path="/track" component={TrackHistory} />
               <Route path="/staff" component={StaffPage} />
               <Route exact path="/events" component={EventsPage} />

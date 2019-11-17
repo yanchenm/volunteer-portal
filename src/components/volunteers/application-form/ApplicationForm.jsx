@@ -3,7 +3,7 @@
 /* eslint-disable no-console */
 import React from 'react';
 import { Formik } from 'formik';
-import { Button } from 'antd';
+import { Button, message } from 'antd';
 import * as Yup from 'yup';
 import applicationForm from './appForm.json';
 import permissionAndRelease from './permissionAndRelease.json';
@@ -17,9 +17,15 @@ import Banner from '../../common/Banner';
 import PageFooter from '../../common/PageFooter';
 import { UserConsumer } from '../../../user.context';
 
+import { checkUserExists } from '../../../civicrm/QueryUsers';
 import { submitVolunteerApplication } from '../../../civicrm/UserCreation';
+import { volunteerSubmitted } from '../../../civicrm/UserUpdate';
 
-const ApplicationForm = () => {
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+const ApplicationForm = props => {
   const initialValues = {};
   const validationSchema = {};
 
@@ -46,28 +52,30 @@ const ApplicationForm = () => {
         return (
           <div>
             <Banner />
-            <div style={{ width: 800, margin: '100px auto' }}>
-              <h1>Volunteer Application Form, Central West Region</h1>
+            <div style={{ width: 800, margin: '30px auto' }}>
+              <h1>Volunteer Application Form</h1>
               <p>
-                Thank you for your interest in becoming a volunteer with Autism Ontario-Central West
-                Region. Please complete the volunteer application form and email it to
-                centralwestvolunteer@autismontario.com. Should you have any questions about the
+                Thank you for your interest in becoming a volunteer with Autism Ontario. Please
+                complete the volunteer application form. Should you have any questions about the
                 application or about volunteer opportunities, contact Laura Heimpel, Regional
-                Program and Volunteer Coordinator at 416-246-9592 ext. 308 or
-                centralwestvolunteer@autismontario.com
+                Program and Volunteer Coordinator at 416-246-9592 ext. 308.
               </p>
               <Formik
                 initialValues={initialValues}
-                onSubmit={values => {
+                onSubmit={async values => {
+                  console.log('React');
                   submitVolunteerApplication(user.id, values);
+                  volunteerSubmitted(user.id);
+                  message.success('Application received. Please wait...');
+                  await sleep(1500);
+                  checkUserExists(user.email).then(res => {
+                    const obj = Object.values(res.values)[0];
+                    context.signIn(obj);
+                    props.history.push(context.goHome());
+                  });
                 }}
                 validationSchema={Yup.object().shape({
                   ...validationSchema,
-                  ...{
-                    email: Yup.string()
-                      .email('Email is invalid.')
-                      .required('This field is required'),
-                  },
                 })}
               >
                 {({ values, handleChange, handleBlur, handleSubmit, errors, touched }) => (
@@ -104,20 +112,6 @@ const ApplicationForm = () => {
                               );
                             }
                             if (item.type === 'radio') {
-                              return (
-                                <RadioElement
-                                  errors={errors}
-                                  fieldName={item.fieldName}
-                                  handleBlur={handleBlur}
-                                  handleChange={handleChange}
-                                  label={item.label}
-                                  options={item.options}
-                                  touched={touched}
-                                  values={values}
-                                />
-                              );
-                            }
-                            if (item.type === 'checkbox') {
                               return (
                                 <RadioElement
                                   errors={errors}
@@ -204,12 +198,13 @@ const ApplicationForm = () => {
                     <Button type="primary" onClick={handleSubmit}>
                       Apply
                     </Button>
-                    {/* <pre>{JSON.stringify(values, null, 2)}</pre> */}
-                    <PageFooter />
+                    <pre>{JSON.stringify(values, null, 2)}</pre>
                   </form>
                 )}
               </Formik>
             </div>
+
+            <PageFooter />
           </div>
         );
       }}

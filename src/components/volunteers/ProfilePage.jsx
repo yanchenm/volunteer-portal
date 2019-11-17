@@ -76,12 +76,12 @@ const ProfilePage = () => {
                   </Col>
                   <Col span={6}>
                     <Card>
-                      <Statistic title="Total Volunteer Time" value={420} suffix="Hours" />
+                      <Statistic title="Total Volunteer Time" value={137} suffix="Hours" />
                     </Card>
                   </Col>
                   <Col span={6}>
                     <Card>
-                      <Statistic title="Feedback" value={69} prefix={<Icon type="like" />} />
+                      <Statistic title="Feedback" value={18} prefix={<Icon type="like" />} />
                     </Card>
                   </Col>
                 </Row>
