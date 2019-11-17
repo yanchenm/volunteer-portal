@@ -9,7 +9,7 @@ class Banner extends React.Component {
   constructor() {
     super();
     this.state = {
-      current: 'profile',
+      current: 'home',
     };
   }
 
@@ -37,8 +37,8 @@ class Banner extends React.Component {
             }}
           />
         </Link>
-        <Menu.Item key="profile">
-          <Link to="/profile">Profile</Link>
+        <Menu.Item key="home">
+          <Link to="/home">Home</Link>
         </Menu.Item>
         <Menu.Item key="events">
           <Link to="/events">Events</Link>
