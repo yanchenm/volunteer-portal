@@ -14,6 +14,8 @@ import PasswordElement from '../../forms/PasswordElement';
 import RadioElement from '../../forms/RadioElement';
 import TextAreaElement from '../../forms/TextAreaElement';
 // import CheckboxElement from '../../forms/SelectElement';
+import Banner from '../../Banner';
+import PageFooter from '../../PageFooter';
 
 const ApplicationForm = () => {
   const initialValues = {};
@@ -37,6 +39,7 @@ const ApplicationForm = () => {
 
   return (
     <div>
+      <Banner />
       <div style={{ width: 800, margin: '100px auto' }}>
         <h1>Volunteer Application Form, Central West Region</h1>
         <p>
@@ -192,7 +195,8 @@ const ApplicationForm = () => {
               <Button type="primary" onClick={handleSubmit}>
                 Apply
               </Button>
-              <pre>{JSON.stringify(values, null, 2)}</pre>
+              {/* <pre>{JSON.stringify(values, null, 2)}</pre> */}
+              <PageFooter />
             </form>
           )}
         </Formik>
