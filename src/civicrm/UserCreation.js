@@ -22,10 +22,12 @@ const createVolunteer = data => {
     `,"custom_9":"${data.languagesSpoken}"` +
     `,"custom_10":"${data.languagesWritten}"` +
     `,"perferred_communication_method":"${data.preferredContactMethod}"` +
+    `,"contact_type":"Individual"` +
+    `,"contact_sub_type":"Volunteer"` +
     `,"return":"${fields}"` +
     `}`;
 
-  return fetch(`${baseUrl}&${requestType}&${body}`).then(response => {
+  return fetch(`${baseUrl}&${requestType}&${body}`, { method: 'POST' }).then(response => {
     return response.json();
   });
 };

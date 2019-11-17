@@ -11,6 +11,8 @@ import RadioElement from '../../forms/RadioElement';
 
 import PageFooter from '../../common/PageFooter';
 
+import createVolunteer from '../../../civicrm/UserCreation';
+
 const RegistrationPage = () => {
   const initialValues = {};
   const validationSchema = {};
@@ -40,7 +42,7 @@ const RegistrationPage = () => {
         <Formik
           initialValues={initialValues}
           onSubmit={values => {
-            console.log(values);
+            createVolunteer(values);
           }}
           validationSchema={Yup.object().shape({
             ...validationSchema,
