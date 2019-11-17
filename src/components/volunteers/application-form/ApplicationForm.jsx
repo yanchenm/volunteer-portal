@@ -14,8 +14,8 @@ import PasswordElement from '../../forms/PasswordElement';
 import RadioElement from '../../forms/RadioElement';
 import TextAreaElement from '../../forms/TextAreaElement';
 // import CheckboxElement from '../../forms/SelectElement';
-import Banner from '../../Banner';
-import PageFooter from '../../PageFooter';
+import Banner from '../../common/Banner';
+import PageFooter from '../../common/PageFooter';
 
 const ApplicationForm = () => {
   const initialValues = {};
