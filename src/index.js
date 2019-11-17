@@ -10,6 +10,7 @@ import ProfilePage from './components/volunteers/ProfilePage';
 import ApplicationProgress from './components/volunteers/ApplicationProgress';
 import DocumentUpload from './components/volunteers/DocumentUpload';
 import TrackHistory from './components/volunteers/TrackHistory';
+import StaffPage from './components/staff/StaffPage';
 import EventsPage from './components/events/EventsPage';
 import EventDetails from './components/events/EventDetails';
 
@@ -24,6 +25,7 @@ const routing = (
       <Route path="/progress" component={ApplicationProgress} />
       <Route path="/upload" component={DocumentUpload} />
       <Route path="/track" component={TrackHistory} />
+      <Route path="/staff" component={StaffPage} />
       <Route exact path="/events" component={EventsPage} />
       <Route path="/events/:id" component={EventDetails} />
     </div>
