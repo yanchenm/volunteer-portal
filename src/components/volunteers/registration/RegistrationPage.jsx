@@ -1,7 +1,7 @@
 /* eslint-disable import/no-named-as-default */
 import React from 'react';
 import { Formik } from 'formik';
-import { Button } from 'antd';
+import { Button, PageHeader } from 'antd';
 import * as Yup from 'yup';
 
 import contactInfo from './contactInfo.json';
@@ -9,7 +9,6 @@ import TextElement from '../../forms/TextElement';
 import PasswordElement from '../../forms/PasswordElement';
 import RadioElement from '../../forms/RadioElement';
 
-import Banner from '../../common/Banner';
 import PageFooter from '../../common/PageFooter';
 
 const RegistrationPage = () => {
@@ -25,12 +24,18 @@ const RegistrationPage = () => {
 
   return (
     <div>
-      <Banner />
-      <div style={{ width: 800, margin: '100px auto' }}>
+      <div
+        style={{
+          padding: 24,
+        }}
+      >
+        <PageHeader ghost={false} onBack={() => window.history.back()} title="Back" />
+      </div>
+      <div style={{ width: 800, margin: '30px auto' }}>
         <h1>Volunteer Registration</h1>
         <p>
-          Thank you for your interest in becoming a volunteer with Autism Ontario-Central West
-          Region. Please complete the volunteer registration form here.
+          Thank you for your interest in becoming a volunteer with Autism Ontario. Please complete
+          the volunteer registration form here.
         </p>
         <Formik
           initialValues={initialValues}
