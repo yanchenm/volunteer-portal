@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-concat */
 /* eslint-disable max-len */
 const baseUrl =
   'https://cors-anywhere.herokuapp.com/' +
@@ -15,13 +16,14 @@ const checkUserExists = email => {
   });
 };
 
-const listVolunteers = (submitted, approved) => {
+const listVolunteers = (interviewed, approved) => {
   const requestType = 'entity=Contact&action=get';
   const fields = '';
   const body =
     `json={"return":"${fields}"` +
-    `,"custom_36":"${submitted}"` +
-    `,"custom_37":"${approved}"` +
+    `,"custom_37":"true"` +
+    `,"custom_45":"${interviewed}"` +
+    `,"custom_36":"${approved}"` +
     `}`;
 
   return fetch(`${baseUrl}&${requestType}&${body}`).then(response => {
