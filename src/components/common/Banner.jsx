@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Menu } from 'antd';
-import logo from '../logo.png';
+import logo from '../../logo.png';
 
 import 'antd/dist/antd.css';
 
