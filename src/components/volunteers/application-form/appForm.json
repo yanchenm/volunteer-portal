@@ -98,7 +98,7 @@
     "fields": [
       {
         "fieldName": "availability",
-        "label": "Please check all that apply:",
+        "label": "Please enter the days and times you are available:",
         "required": true,
         "type": "textArea"
       },
