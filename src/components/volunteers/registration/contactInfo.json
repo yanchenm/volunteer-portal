@@ -15,7 +15,8 @@
     "fieldName": "gender",
     "label": "I identify my gender as:",
     "required": true,
-    "type": "text"
+    "type": "radio",
+    "options": ["Male", "Female", "Other"]
   },
   {
     "fieldName": "address",
