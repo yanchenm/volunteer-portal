@@ -75,11 +75,6 @@ const ApplicationForm = props => {
                 }}
                 validationSchema={Yup.object().shape({
                   ...validationSchema,
-                  ...{
-                    email: Yup.string()
-                      .email('Email is invalid.')
-                      .required('This field is required'),
-                  },
                 })}
               >
                 {({ values, handleChange, handleBlur, handleSubmit, errors, touched }) => (
