@@ -66,7 +66,7 @@ const ProfilePage = () => {
                     <Card>
                       <Statistic
                         title="Monthly Hours"
-                        value={11.28}
+                        value={0.0}
                         precision={2}
                         valueStyle={{ color: '#3f8600' }}
                         prefix={<Icon type="arrow-up" />}
@@ -76,12 +76,12 @@ const ProfilePage = () => {
                   </Col>
                   <Col span={6}>
                     <Card>
-                      <Statistic title="Total Volunteer Time" value={137} suffix="Hours" />
+                      <Statistic title="Total Volunteer Time" value={0} suffix="Hours" />
                     </Card>
                   </Col>
                   <Col span={6}>
                     <Card>
-                      <Statistic title="Feedback" value={18} prefix={<Icon type="like" />} />
+                      <Statistic title="Feedback" value={0} prefix={<Icon type="like" />} />
                     </Card>
                   </Col>
                 </Row>

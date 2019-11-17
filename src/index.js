@@ -23,7 +23,9 @@ const routing = (
         return (
           <Router>
             <div>
-              <Route exact path="/" component={App} />
+              <Route exact path="/">
+                <Redirect to="/home" />
+              </Route>
               <Route path="/home">
                 <Redirect to={context.goHome()} />
               </Route>
