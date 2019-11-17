@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-prop-types */
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable no-console */
@@ -27,13 +28,13 @@ export const TextElement = props => {
 };
 
 TextElement.propTypes = {
-  errors: PropTypes.func.isRequired,
+  errors: PropTypes.object.isRequired,
   fieldName: PropTypes.string.isRequired,
   handleBlur: PropTypes.func.isRequired,
   handleChange: PropTypes.func.isRequired,
   label: PropTypes.string.isRequired,
-  touched: PropTypes.func.isRequired,
-  values: PropTypes.func.isRequired,
+  touched: PropTypes.object.isRequired,
+  values: PropTypes.object.isRequired,
 };
 
 export default TextElement;
