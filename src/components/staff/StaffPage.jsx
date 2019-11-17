@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable react/no-access-state-in-setstate */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable no-console */
@@ -6,7 +7,6 @@ import { Descriptions, List, Card, Modal, Button } from 'antd';
 import styled from 'styled-components';
 import { listVolunteers } from '../../civicrm/QueryUsers';
 import { volunteerInterviewed, volunteerApproved } from '../../civicrm/UserUpdate';
-
 import customFields from '../common/CustomFields.json';
 
 const Wrapper = styled.div`
@@ -63,22 +63,29 @@ class StaffPage extends React.Component {
     });
   };
 
-  interviewVolunteer = () => {
-    volunteerInterviewed(12);
+  determineAction = currentUser => {
+    if (currentUser !== undefined) {
+      if (currentUser.custom_45 !== 'true') {
+        this.interviewVolunteer(currentUser.id);
+      } else {
+        this.approveVolunteer(currentUser.id);
+      }
+    }
   };
 
-  approveVolunteer = () => {
-    // Post to flip accepted flag, remove from list
-    volunteerApproved(12);
+  interviewVolunteer = id => {
+    volunteerInterviewed(id);
+  };
+
+  approveVolunteer = id => {
+    volunteerApproved(id);
   };
 
   render = () => {
     const ModalDashboard = currentUser => {
-      console.log(currentUser);
       if (currentUser) {
         return (
           <div>
-            <p>asodijsdoijsdoifj</p>
             <Descriptions size="small" column={2} bordered>
               {Object.keys(currentUser.currentUser).map(key => {
                 if (
@@ -176,9 +183,19 @@ class StaffPage extends React.Component {
           width={1000}
         >
           <p>{currentUser ? `${currentUser.first_name} ${currentUser.last_name}` : ''}</p>
-          {/* <p>This will be content about the user.</p> */}
           <ModalDashboard currentUser={currentUser} />
-          <Button type="primary" onClick={this.approveVolunteer()}>
+          {currentUser && currentUser.custom_38 ? (
+            <a
+              href={`https://***REMOVED***.s3.ca-central-1.amazonaws.com/${currentUser.id}_police.png`}
+            >
+              View police report document
+            </a>
+          ) : null}
+          <Button
+            id="submit-button"
+            type="primary"
+            onClick={() => this.determineAction(currentUser)}
+          >
             Accept
           </Button>
         </Modal>

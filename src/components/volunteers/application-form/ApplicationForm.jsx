@@ -198,7 +198,6 @@ const ApplicationForm = props => {
                     <Button type="primary" onClick={handleSubmit}>
                       Apply
                     </Button>
-                    <pre>{JSON.stringify(values, null, 2)}</pre>
                   </form>
                 )}
               </Formik>
