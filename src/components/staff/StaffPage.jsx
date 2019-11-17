@@ -7,6 +7,8 @@ import styled from 'styled-components';
 import { listVolunteers } from '../../civicrm/QueryUsers';
 import { volunteerInterviewed, volunteerApproved } from '../../civicrm/UserUpdate';
 
+import customFields from '../common/CustomFields.json';
+
 const Wrapper = styled.div`
   margin: 10px 20%;
 `;
@@ -85,7 +87,7 @@ class StaffPage extends React.Component {
                   key !== 'lastName'
                 ) {
                   return (
-                    <Descriptions.Item label={key}>
+                    <Descriptions.Item label={customFields[key] || key}>
                       {currentUser.currentUser[key]}
                     </Descriptions.Item>
                   );
