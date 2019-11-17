@@ -63,6 +63,7 @@ const ApplicationForm = props => {
               <Formik
                 initialValues={initialValues}
                 onSubmit={async values => {
+                  console.log('React');
                   submitVolunteerApplication(user.id, values);
                   volunteerSubmitted(user.id);
                   message.success('Application received. Please wait...');
@@ -111,20 +112,6 @@ const ApplicationForm = props => {
                               );
                             }
                             if (item.type === 'radio') {
-                              return (
-                                <RadioElement
-                                  errors={errors}
-                                  fieldName={item.fieldName}
-                                  handleBlur={handleBlur}
-                                  handleChange={handleChange}
-                                  label={item.label}
-                                  options={item.options}
-                                  touched={touched}
-                                  values={values}
-                                />
-                              );
-                            }
-                            if (item.type === 'checkbox') {
                               return (
                                 <RadioElement
                                   errors={errors}
@@ -211,7 +198,7 @@ const ApplicationForm = props => {
                     <Button type="primary" onClick={handleSubmit}>
                       Apply
                     </Button>
-                    {/* <pre>{JSON.stringify(values, null, 2)}</pre> */}
+                    <pre>{JSON.stringify(values, null, 2)}</pre>
                   </form>
                 )}
               </Formik>

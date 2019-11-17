@@ -58,6 +58,7 @@ const submitVolunteerApplication = (id, data) => {
     `}`;
 
   return fetch(`${baseUrl}&${requestType}&${body}`, { method: 'POST' }).then(response => {
+    console.log('Fetch');
     return response.json();
   });
 };
