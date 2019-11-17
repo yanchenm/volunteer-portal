@@ -13,7 +13,6 @@ import TextElement from '../../forms/TextElement';
 import PasswordElement from '../../forms/PasswordElement';
 import RadioElement from '../../forms/RadioElement';
 import TextAreaElement from '../../forms/TextAreaElement';
-// import CheckboxElement from '../../forms/SelectElement';
 import Banner from '../../common/Banner';
 import PageFooter from '../../common/PageFooter';
 
