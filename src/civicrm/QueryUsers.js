@@ -7,7 +7,7 @@ const baseUrl =
 const checkUserExists = email => {
   const requestType = 'entity=Contact&action=get';
   const fields =
-    'id,email,first_name,last_name,gender_id,custom_14,city,custom_19,custom_18,custom_23,custom_38,custom_36,custom_37,contact_sub_type';
+    'id,email,first_name,last_name,gender_id,custom_14,city,custom_19,custom_18,custom_23,custom_38,custom_36,custom_37,custom_45,contact_sub_type';
   const body = `json={"return":"${fields}","email":"${email}"}`;
 
   return fetch(`${baseUrl}&${requestType}&${body}`).then(response => {

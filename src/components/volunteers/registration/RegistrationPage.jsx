@@ -111,11 +111,11 @@ const RegistrationPage = () => {
                 Register
               </Button>
               {/* <pre>{JSON.stringify(values, null, 2)}</pre> */}
-              <PageFooter />
             </form>
           )}
         </Formik>
       </div>
+      <PageFooter />
     </div>
   );
 };

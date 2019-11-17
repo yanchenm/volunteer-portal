@@ -41,10 +41,11 @@ export class UserProvider extends Component {
       custom_36: 'approved',
       custom_37: 'submitted',
       custom_38: 'policeCheck',
+      custom_45: 'interviewed',
       contact_sub_type: 'type',
     };
 
-    const boolFields = ['custom_23', 'custom_36', 'custom_37', 'custom_38'];
+    const boolFields = ['custom_23', 'custom_36', 'custom_37', 'custom_38', 'custom_45'];
 
     Object.keys(user).forEach(field => {
       if (field === 'contact_sub_type') {
