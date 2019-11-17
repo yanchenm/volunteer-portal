@@ -6,7 +6,7 @@ import { Input, Button, Row, Col, Divider } from 'antd';
 import * as Yup from 'yup';
 import logo from '../../logo.png';
 
-import checkUserExists from '../../civicrm/QueryUsers';
+import { checkUserExists } from '../../civicrm/QueryUsers';
 import { UserConsumer } from '../../user.context';
 
 import 'antd/dist/antd.css';

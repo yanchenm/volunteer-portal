@@ -8,11 +8,25 @@ const checkUserExists = email => {
   const requestType = 'entity=Contact&action=get';
   const fields =
     'id,email,first_name,last_name,gender_id,custom_14,city,custom_19,custom_18,custom_23,custom_38,custom_36,custom_37,custom_45,contact_sub_type';
-  const body = `json={"return":"${fields}","email":"${email}"}`;
+  const body = `json={"return":"${fields}"` + `,"email":"${email}"` + `}`;
 
   return fetch(`${baseUrl}&${requestType}&${body}`).then(response => {
     return response.json();
   });
 };
 
-export default checkUserExists;
+const listVolunteers = (submitted, approved) => {
+  const requestType = 'entity=Contact&action=get';
+  const fields = '';
+  const body =
+    `json={"return":"${fields}"` +
+    `,"custom_36":"${submitted}"` +
+    `,"custom_37":"${approved}"` +
+    `}`;
+
+  return fetch(`${baseUrl}&${requestType}&${body}`).then(response => {
+    return response.json();
+  });
+};
+
+export { checkUserExists, listVolunteers };
