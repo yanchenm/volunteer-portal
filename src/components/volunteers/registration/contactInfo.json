@@ -60,10 +60,34 @@
     "type": "text"
   },
   {
+    "fieldName": "password",
+    "label": "Password:",
+    "required": true,
+    "type": "password"
+  },
+  {
     "fieldName": "age",
     "label": "Age:",
     "required": true,
     "type": "radio",
     "options": ["15-20", "21-25", "26-30", "31+"]
+  },
+  {
+    "fieldName": "langaugesSpoken",
+    "label": "Languages Spoken:",
+    "required": true,
+    "type": "text"
+  },
+  {
+    "fieldName": "languagesWritten",
+    "label": "Languages Written:",
+    "required": true,
+    "type": "text"
+  },
+  {
+    "fieldName": "preferredContactMethod",
+    "label": "Preferred Contact Method:",
+    "required": true,
+    "type": "text"
   }
 ]
