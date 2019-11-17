@@ -11,7 +11,7 @@ import RadioElement from '../../forms/RadioElement';
 
 import PageFooter from '../../common/PageFooter';
 
-import createVolunteer from '../../../civicrm/UserCreation';
+import { createVolunteer } from '../../../civicrm/UserCreation';
 
 const RegistrationPage = () => {
   const initialValues = {};
