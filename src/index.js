@@ -3,15 +3,16 @@ import ReactDOM from 'react-dom';
 import { Route, BrowserRouter as Router } from 'react-router-dom';
 
 import App from './App';
-import Banner from './components/Banner';
+import Banner from './components/common/Banner';
 import ApplicationForm from './components/volunteers/application-form/ApplicationForm';
-import LoginPage from './components/LoginPage';
+import LoginPage from './components/common/LoginPage';
 import ProfilePage from './components/volunteers/ProfilePage';
 import ApplicationProgress from './components/volunteers/ApplicationProgress';
 import DocumentUpload from './components/volunteers/DocumentUpload';
 import TrackHistory from './components/volunteers/TrackHistory';
 import EventsPage from './components/events/EventsPage';
 import EventDetails from './components/events/EventDetails';
+import RegistrationPage from './components/volunteers/RegistrationPage';
 
 const routing = (
   <Router>
@@ -19,6 +20,7 @@ const routing = (
       <Route exact path="/" component={App} />
       <Route path="/banner" component={Banner} />
       <Route path="/login" component={LoginPage} />
+      <Route path="/register" component={RegistrationPage} />
       <Route path="/apply" component={ApplicationForm} />
       <Route path="/profile" component={ProfilePage} />
       <Route path="/progress" component={ApplicationProgress} />
