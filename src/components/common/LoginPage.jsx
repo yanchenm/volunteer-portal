@@ -5,6 +5,7 @@ import { Formik } from 'formik';
 import { Input, Button, Row, Col, Divider } from 'antd';
 import * as Yup from 'yup';
 import logo from '../../logo.png';
+import checkUserExists from '../../civicrm/QueryUsers';
 
 import 'antd/dist/antd.css';
 
@@ -24,7 +25,8 @@ const LoginPage = () => {
           <Formik
             initialValues={{ email: '', password: '' }}
             onSubmit={values => {
-              alert(JSON.stringify(values, null, 2));
+              // alert(JSON.stringify(values, null, 2));
+              checkUserExists(values.email).then(console.log);
             }}
             validationSchema={Yup.object().shape({
               email: Yup.string()
