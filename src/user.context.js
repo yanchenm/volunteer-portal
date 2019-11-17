@@ -1,3 +1,4 @@
+/* eslint-disable prefer-destructuring */
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable react/forbid-prop-types */
 import React, { Component } from 'react';
@@ -19,20 +20,56 @@ export class UserProvider extends Component {
 
     this.state = {
       authStatus: userStates.LOGGED_OUT,
-      user: {},
+      user: null,
       navPage: '',
     };
   }
 
   signIn = user => {
-    const { type } = user;
+    const tempState = {};
+
+    const fieldMap = {
+      contact_id: 'id',
+      email: 'email',
+      first_name: 'firstName',
+      last_name: 'lastName',
+      gender: 'gender',
+      custom_14: 'age',
+      custom_18: 'areasOfInterest',
+      custom_19: 'qualifications',
+      custom_23: 'vulnerableCheck',
+      custom_36: 'approved',
+      custom_37: 'submitted',
+      custom_38: 'policeCheck',
+      contact_sub_type: 'type',
+    };
+
+    const boolFields = ['custom_23', 'custom_36', 'custom_37', 'custom_38'];
+
+    Object.keys(user).forEach(field => {
+      if (field === 'contact_sub_type') {
+        tempState.type = user[field][0];
+      } else if (field in fieldMap) {
+        if (boolFields.includes(field)) {
+          if (user[field] === 'true') {
+            tempState[fieldMap[field]] = true;
+          } else {
+            tempState[fieldMap[field]] = false;
+          }
+        } else {
+          tempState[fieldMap[field]] = user[field];
+        }
+      }
+    });
+
+    const { type } = tempState;
     let authStatus = '';
 
     if (type === 'Volunteer') {
-      const { appComplete, approved } = user;
-      if (appComplete && approved) {
+      const { submitted, approved } = tempState;
+      if (submitted && approved) {
         authStatus = userStates.VOLUNTEER_APPROVED;
-      } else if (appComplete) {
+      } else if (submitted) {
         authStatus = userStates.VOLUNTEER_NOT_APPROVED;
       } else {
         authStatus = userStates.VOLUNTEER_IN_PROGRESS;
@@ -42,15 +79,17 @@ export class UserProvider extends Component {
     }
 
     this.setState({
-      user,
+      user: tempState,
       authStatus,
     });
+
+    console.log(this.state);
   };
 
   signOut = () => {
     this.setState({
       authStatus: userStates.LOGGED_OUT,
-      user: {},
+      user: null,
     });
   };
 

@@ -7,7 +7,7 @@ import App from './App';
 import Banner from './components/common/Banner';
 import ApplicationForm from './components/volunteers/application-form/ApplicationForm';
 import LoginPage from './components/common/LoginPage';
-import ProfilePage from './components/volunteers/ProfilePage';
+import HomePage from './components/volunteers/HomePage';
 import ApplicationProgress from './components/volunteers/ApplicationProgress';
 import DocumentUpload from './components/volunteers/DocumentUpload';
 import TrackHistory from './components/volunteers/TrackHistory';
@@ -31,7 +31,7 @@ const routing = (
               <Route path="/login" component={LoginPage} />
               <Route path="/register" component={RegistrationPage} />
               <Route path="/apply" component={ApplicationForm} />
-              <Route path="/profile/:id" component={ProfilePage} />
+              <Route path="/profile/:id" component={HomePage} />
               <Route path="/progress" component={ApplicationProgress} />
               <Route path="/upload" component={DocumentUpload} />
               <Route path="/track" component={TrackHistory} />
