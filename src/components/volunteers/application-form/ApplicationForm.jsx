@@ -31,7 +31,7 @@ const ApplicationForm = props => {
 
   applicationForm.forEach(section => {
     section.fields.forEach(field => {
-      initialValues[field.fieldName] = field.type === 'checkbox' ? [] : '';
+      initialValues[field.fieldName] = '';
       if (field.required) {
         validationSchema[field.fieldName] = Yup.string().required('This field is required');
       }

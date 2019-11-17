@@ -38,9 +38,9 @@
     "fields": [
       {
         "fieldName": "areasOfInterest",
-        "label": "Select all that interest you:",
+        "label": "Which of the following areas interest you: Adult supports, Regional Events, Outreach and Development, Volunteer Recruitment and Support, Parent Mentorship, Advocacy, Community Building, Fundraising, Educational Advocacy",
         "required": true,
-        "type": "checkbox",
+        "type": "text",
         "options": [
           "Adult Supports",
           "Regional Events",
