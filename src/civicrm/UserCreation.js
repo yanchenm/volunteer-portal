@@ -32,4 +32,34 @@ const createVolunteer = data => {
   });
 };
 
-export default createVolunteer;
+const submitVolunteerApplication = (id, data) => {
+  const requestType = 'entity=Contact&action=create';
+  const body =
+    `json={"id":"${id}"` +
+    `,"custom_11": ${data.emergencyContactName}` +
+    `,"custom_15": ${data.emergencyContactRelationship}` +
+    `,"custom_16": ${data.emergencyContactPhoneNumber}` +
+    `,"custom_17": ${data.howHeardAboutUs}` +
+    `,"custom_18": ${data.areasOfInterest}` +
+    `,"custom_19": ${data.qualifications}` +
+    `,"custom_20": ${data.firstAid}` +
+    `,"custom_21": ${data.otherCertificates}` +
+    `,"custom_22": ${data.willingToSubmitVulnerableScreening}` +
+    `,"custom_23": ${data.completedVulnerableSectorCheck}` +
+    `,"custom_24": ${data.availability}` +
+    `,"custom_25": ${data.periodOfTime}` +
+    `,"custom_26": ${data.cities}` +
+    `,"custom_27": ${data.vehicle}` +
+    `,"custom_28": ${data.stayConnected}` +
+    `,"custom_29": ${data.references}` +
+    `,"custom_30": ${data.nameDate}` +
+    `,"custom_31": ${data.parentName}` +
+    `,"custom_32": ${data.parentNameDate}` +
+    `}`;
+
+  return fetch(`${baseUrl}&${requestType}&${body}`, { method: 'POST' }).then(response => {
+    return response.json();
+  });
+};
+
+export { createVolunteer, submitVolunteerApplication };
