@@ -31,4 +31,28 @@ const volunteerApproved = contactId => {
   });
 };
 
-export { volunteerSubmitted, volunteerInterviewed, volunteerApproved };
+const policeSubmitted = contactId => {
+  const requestType = 'entity=Contact&action=create';
+  const body = `json={"id":"${contactId}"` + `,"custom_38":"true"` + `}`;
+
+  return fetch(`${baseUrl}&${requestType}&${body}`, { method: 'POST' }).then(response => {
+    return response.json();
+  });
+};
+
+const vulnerableSubmitted = contactId => {
+  const requestType = 'entity=Contact&action=create';
+  const body = `json={"id":"${contactId}"` + `,"custom_23":"true"` + `}`;
+
+  return fetch(`${baseUrl}&${requestType}&${body}`, { method: 'POST' }).then(response => {
+    return response.json();
+  });
+};
+
+export {
+  volunteerSubmitted,
+  volunteerInterviewed,
+  volunteerApproved,
+  policeSubmitted,
+  vulnerableSubmitted,
+};
