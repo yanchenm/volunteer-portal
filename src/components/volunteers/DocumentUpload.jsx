@@ -8,6 +8,7 @@ import { UserConsumer } from '../../user.context';
 import { policeSubmitted, vulnerableSubmitted } from '../../civicrm/UserUpdate';
 import { checkUserExists } from '../../civicrm/QueryUsers';
 
+// Temporary hackathon bucket. Replace me.
 const config = {
   bucketName: '***REMOVED***',
   region: 'ca-central-1',
