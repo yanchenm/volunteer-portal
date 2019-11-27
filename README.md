@@ -37,4 +37,4 @@ You will also see any lint errors in the console.
 
 ## Working with this Project
 
-You can find more details on what we accomplished during the hackathon, some changes that need to be made, and other details in the [wiki pages](https://github.com/yanchenm/volunteer-portal/wiki).
+You can find more details on what we accomplished during the hackathon, some changes that need to be made, and other details in the [wiki pages](https://github.com/yanchenm/volunteer-portal/wiki). Track post-hackathon work in our [issues log](https://github.com/yanchenm/volunteer-portal/issues).
