@@ -10,17 +10,17 @@ This project was created Nov. 15 - 17, 2019 for Autism Ontario at the [\#digital
 
 ## Features
 
-- ⚛️ React user interface built for usability
+- ⚛️ React user interface built for usability.
 
-- 📋 Responsive application form with validation
+- 📋 Responsive application form with validation.
 
-- ⏱ Live tracking of application status
+- ⏱ Live tracking of application status.
 
-- 📡 Signed documents uploaded directly to S3
+- 📡 Signed documents uploaded directly to S3.
 
-- 📊 Track volunteer hours and history
+- 📊 Track volunteer hours and history.
 
-- ✔️ Staff review and approval for new volunteers
+- ✔️ Staff review and approval for new volunteers.
 
 ## Running Locally
 
