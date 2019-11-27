@@ -20,7 +20,7 @@ This project was created Nov. 15 - 17, 2019 for Autism Ontario at the [\#digital
 
 - 📊 Track volunteer hours and history
 
-- ✔️ Review application, check documents, approve volunteers from one staff page
+- ✔️ Staff review and approval for new volunteers
 
 ## Running Locally
 
