@@ -1,6 +1,6 @@
 # Autism Ontario Volunteer Portal
 
-This project was created Nov. 15 - 17, 2019 for Autism Ontario at the [\#digitalforgood](https://www.digitalforgood.com/) 2019 Tech Jam  with work completed afterwards to integrate with their existing systems. This portal will be a centralized hub for volunteers and staff to track, manage, and review applications, documents, and volunteer history.
+This project was created Nov. 15 - 17, 2019 for Autism Ontario at the [\#digitalforgood](https://www.digitalforgood.com/) 2019 Tech Jam  with work completed afterwards to integrate with their existing systems. The portal will be a centralized hub for volunteers and staff to track, manage, and review applications, documents, and volunteer history.
 
 ## The Team 👨🏻‍💻
 
