@@ -79,19 +79,25 @@ export class UserProvider extends Component {
       authStatus = userStates.STAFF;
     }
 
+    sessionStorage.setItem('autism-ontario-user', JSON.stringify(tempState));
+
     this.setState({
       user: tempState,
       authStatus,
     });
-
-    console.log(this.state);
   };
 
   signOut = () => {
+    sessionStorage.removeItem('autism-ontario-user');
     this.setState({
       authStatus: userStates.LOGGED_OUT,
       user: null,
     });
+  };
+
+  // Janky authentication persistence
+  getAuthenticatedUser = () => {
+    return JSON.parse(sessionStorage.getItem('autism-ontario-user'));
   };
 
   navigate = page => {
@@ -136,6 +142,7 @@ export class UserProvider extends Component {
         value={{
           signIn: this.signIn,
           signOut: this.signOut,
+          getAuthenticatedUser: this.getAuthenticatedUser,
           navigate: this.navigate,
           goHome: this.goHome,
           user,
