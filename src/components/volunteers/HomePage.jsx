@@ -14,23 +14,23 @@ const HomePage = ({ match }) => {
     <UserConsumer>
       {context => {
         const { id } = match.params;
-        const { signIn, getAuthenticatedUser, authStatus, user } = context;
+        const { signIn, getAuthenticatedUser, authStatus, user, goHome } = context;
 
         if (user === null) {
-          const authUser = getAuthenticatedUser();
+          const authUserEmail = getAuthenticatedUser();
 
-          if (authUser === null) {
+          if (authUserEmail === null) {
             return (
               <Result
                 status="403"
                 title="403"
                 subTitle="Sorry, you are not authorized to access this page."
-                extra={<Link to={context.goHome()}>Go Home.</Link>}
+                extra={<Link to={goHome()}>Go Home.</Link>}
               />
             );
           }
 
-          checkUserExists(authUser.email).then(res => {
+          checkUserExists(authUserEmail).then(res => {
             const obj = Object.values(res.values)[0];
             signIn(obj);
           });

@@ -79,7 +79,7 @@ export class UserProvider extends Component {
       authStatus = userStates.STAFF;
     }
 
-    sessionStorage.setItem('autism-ontario-user', JSON.stringify(tempState));
+    sessionStorage.setItem('autism-ontario-user', tempState.email);
 
     this.setState({
       user: tempState,
@@ -97,7 +97,7 @@ export class UserProvider extends Component {
 
   // Janky authentication persistence
   getAuthenticatedUser = () => {
-    return JSON.parse(sessionStorage.getItem('autism-ontario-user'));
+    return sessionStorage.getItem('autism-ontario-user');
   };
 
   navigate = page => {
