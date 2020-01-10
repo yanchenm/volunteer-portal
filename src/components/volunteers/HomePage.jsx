@@ -2,6 +2,7 @@ import React from 'react';
 import { Result } from 'antd';
 import { Link } from 'react-router-dom';
 
+import { checkUserExists } from '../../civicrm/QueryUsers';
 import { UserConsumer, userStates } from '../../user.context';
 import ProfilePage from './ProfilePage';
 import ApplicationProgress from './ApplicationProgress';
@@ -13,17 +14,26 @@ const HomePage = ({ match }) => {
     <UserConsumer>
       {context => {
         const { id } = match.params;
-        const { authStatus, user } = context;
+        const { signIn, getAuthenticatedUser, authStatus, user, goHome } = context;
 
         if (user === null) {
-          return (
-            <Result
-              status="403"
-              title="403"
-              subTitle="Sorry, you are not authorized to access this page."
-              extra={<Link to={context.goHome()}>Go Home.</Link>}
-            />
-          );
+          const authUserEmail = getAuthenticatedUser();
+
+          if (authUserEmail === null) {
+            return (
+              <Result
+                status="403"
+                title="403"
+                subTitle="Sorry, you are not authorized to access this page."
+                extra={<Link to={goHome()}>Go Home.</Link>}
+              />
+            );
+          }
+
+          checkUserExists(authUserEmail).then(res => {
+            const obj = Object.values(res.values)[0];
+            signIn(obj);
+          });
         }
 
         if (
